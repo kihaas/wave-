@@ -1,0 +1,105 @@
+:root {
+    --primary-bg: #140a2f;
+    --secondary-bg: #171140;
+    --highlight-color: #f864ff;
+    --text-color: #ccd6f6;
+    --button-bg: #f864ff;
+    --button-hover: #ccd6f6;
+    --card-bg: #171140;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    height: 100vh;
+    background-color: var(--primary-bg);
+    color: var(--text-color);
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.sidebar {
+    width: 25%;
+    background-color: var(--secondary-bg);
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+}
+
+.sidebar ul {
+    list-style: none;
+    padding: 0;
+}
+
+.sidebar ul li {
+    margin: 10px 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: var(--text-color);
+    display: block;
+    padding: 10px;
+    border-radius: 5px;
+    background-color: transparent;
+    transition: background-color 0.3s;
+}
+
+.sidebar ul li a.active,
+.sidebar ul li a:hover {
+    background-color: var(--highlight-color);
+    color: var(--primary-bg);
+}
+
+.chat {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background-color: var(--primary-bg);
+}
+
+.messages {
+    flex: 1;
+    overflow-y: auto;
+    margin-bottom: 20px;
+    background-color: var(--card-bg);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.sent {
+    text-align: right;
+}
+
+.received {
+    text-align: left;
+}
+
+form textarea {
+    width: 98.4%;
+    padding: 10px;
+    border: 1px solid var(--highlight-color);
+    border-radius: 5px;
+    background-color: var(--secondary-bg);
+    color: var(--text-color);
+}
+
+form button {
+    margin-top: 10px;
+    padding: 10px 20px;
+    background-color: var(--button-bg);
+    color: var(--primary-bg);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: var(--button-hover);
+}

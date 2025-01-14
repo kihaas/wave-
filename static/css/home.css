@@ -1,0 +1,309 @@
+:root {
+    --primary-bg: linear-gradient(135deg, #40444f, #f6f9ff);
+    --secondary-bg: linear-gradient(135deg, #40444f, #f6f9ff);
+    --text-color: #ffffff;
+    --button-bg: #40444f;
+    --button-hover: #030712;
+    --card-bg: linear-gradient(10deg, #f6f9ff, #40444f);
+    --scrollbar-highlight-color: #40444f;
+    --highlight-color: #504d4d;
+}
+body {
+    font-family: Poppins, sans-serif;
+    color: var(--text-color);
+    margin: 0px;
+    background: var(--primary-bg);
+    display: block;
+}
+
+main {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+header {
+    background: var(--secondary-bg);
+    box-shadow: var(--box-shadow);
+    position: fixed;
+    width: 100%;
+    z-index: 1000;
+    padding: 1rem 0;
+    border-bottom: 2px solid var(--highlight-color);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.welcome-text {
+    font-family: "DM Serif Text", serif;
+    font-size: 5rem;
+    color: var(--text-color);
+    text-align: center;
+    margin-top: -30px;
+    text-shadow: var(--neon-glow);
+    margin-bottom: -11rem;
+    position: relative;
+}
+
+.welcome-text span {
+    color: #ffffff; /* Делаем текст "Wave" белым */
+}
+
+:-webkit-any(article, aside, nav, section) h1 {
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+}  
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.logo {
+    font-size: 2rem;
+    font-weight: bold;
+    color: var(--highlight-color);
+    text-decoration: none;
+    text-shadow: var(--neon-glow);
+}
+
+.logo span {
+    display: inline-block;
+    animation: wave 1.5s infinite;
+    animation-delay: calc(var(--i) * 0.2s);
+}
+
+.logo span:nth-child(1) { --i: 1; }
+.logo span:nth-child(2) { --i: 2; }
+.logo span:nth-child(3) { --i: 3; }
+.logo span:nth-child(4) { --i: 4; }
+
+@keyframes wave {
+    0%, 100% { transform: translateY(0); color: var(--highlight-color); }
+    50% { transform: translateY(-10px); color: var(--text-color); }
+}
+
+nav a {
+    margin-left: 1rem;
+    text-decoration: none;
+    color: var(--text-color);
+    font-weight: bold;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    transition: all 0.3s ease-in-out;
+}
+
+nav a:hover {
+    background: var(--highlight-color);
+    color: var(--primary-bg);
+    border-radius: 450px;
+}
+
+.hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: var(--primary-bg);
+    background-attachment: fixed;
+    text-align: center;
+    padding: 2rem;
+    background: url(/static/images/city-bg.jpg) center / cover no-repeat fixed;
+    position: relative;
+}
+
+.intro h1 {
+    font-size: 5rem;
+    color: var(--text-color);
+    line-height: 0.01;
+    text-shadow: var(--neon-glow);
+    margin-bottom: -8rem;
+    position: relative;
+}
+
+.intro h1 span {
+    color: var(--highlight-color);
+}
+
+.start-btn {
+    color: white;
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 2rem 6rem;
+    border-radius: 450px;
+    background: var(--button-bg);
+    border-width: initial;
+    border-style: none;
+    border-color: initial;
+    border-image: initial;
+    transition: 0.3s;
+}
+
+.start-btn:hover {
+    background: var(--button-hover);
+    box-shadow: var(--neon-glow);
+    transform: scale(1.1);
+}
+
+.features {
+    display: flex;
+    overflow-x: auto;
+    scroll-snap-type: x mandatory;
+    gap: 2rem;
+    padding: 2rem 0px;
+}
+
+.feature-card {
+    text-align: center;
+    width: 800px; /* Увеличиваем размер карточек */
+    min-width: 800px; /* Увеличиваем размер карточек */
+    box-shadow: var(--box-shadow);
+    transform: scale(1);
+    opacity: 1;
+    scroll-snap-align: center;
+    font-size: 1.4rem; /* Увеличиваем текст */
+    color: var(--text-color);
+    line-height: 1.8; /* Делаем текст более читабельным */
+    background: var(--card-bg);
+    border-radius: 20px; /* Более округлые углы */
+    padding: 6rem;
+    transition: transform 0.4s, box-shadow 0.4s;
+}
+
+.feature-card[data-visible="true"] {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.feature-card:hover {
+    transform: scale(1.1);
+    box-shadow: rgba(0, 0, 0, 0.5) 0px 15px 30px, rgba(255, 20, 147, 0.6) 0px 0px 10px;
+}
+
+div {
+    display: block;
+    unicode-bidi: isolate;
+}
+
+.feature-card h2 {
+    font-size: 2.5rem; /* Увеличиваем заголовки карточек */
+    font-weight: bold;
+    color: var(--highlight-color);
+    margin-bottom: 1.5rem;
+}
+
+h2 {
+    display: block;
+    font-size: 1.5em;
+    margin-block-start: 0.83em;
+    margin-block-end: 0.83em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.feature-card p {
+    font-size: 1.2rem; /* Увеличиваем размер текста описания */
+    color: var(--text-color);
+    line-height: 1.6;
+}
+
+.features::-webkit-scrollbar-thumb {
+    background: var(--highlight-color);
+    border-radius: 10px;
+}
+/* Полоса прокрутки */
+::-webkit-scrollbar {
+    width: 12px; /* Ширина вертикального скроллбара */
+    height: 12px; /* Высота горизонтального скроллбара */
+}
+
+/* Ползунок внутри скроллбара */
+::-webkit-scrollbar-thumb {
+    background: linear-gradient(135deg, rgb(245, 240, 242), #40444f); /* Цвет или градиент */
+    border-radius: 10px; /* Закругленные углы */
+    border: 2px solid #f6f9ff; /* Отступы через бордер */
+}
+
+/* Фон трека скроллбара */
+::-webkit-scrollbar-track {
+    background: #ccc; /* Цвет трека */
+    border-radius: 10px;
+}
+
+/* Когда мышь находится на ползунке */
+::-webkit-scrollbar-thumb:hover {
+    background: #40444f; /* Меняем цвет ползунка при наведении */
+    border: 2px solid rgb(238, 233, 233);
+}
+
+h1 {
+    display: block;
+    font-size: 2em;
+    margin-block-start: 0.67em;
+    margin-block-end: 0.67em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+    font-weight: bold;
+    unicode-bidi: isolate;
+}
+
+.catch-text {
+    margin-block-end: 0px;
+    font-family: "Monsieur La Doulaise", serif;
+    font-size: 10rem;
+    color: rgb(64, 68, 79);
+    text-align: right;
+    margin-top: -120px;
+}
+
+footer {
+    text-align: center;
+    padding: 1.5rem 0;
+    background: var(--secondary-bg);
+    border-top: 2px solid var(--highlight-color);
+}
+
+/* Секция about */
+.about {
+    padding: 5rem 2rem;
+    background: var(--primary-bg);
+    text-align: center;
+}
+
+.about h2 {
+    font-size: 3rem;
+    color: var(--highlight-color);
+    text-shadow: var(--neon-glow);
+    margin-bottom: 2rem;
+}
+
+.about p {
+    font-size: 1.5rem;
+    color: var(--text-color);
+    line-height: 1.8;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+.about img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 20px;
+    box-shadow: var(--box-shadow);
+    margin-top: 2rem;
+}

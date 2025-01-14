@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link rel="stylesheet" href="/static/css/chat_his.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Users</h2>
+            <ul>
+                {% for user in users %}
+                    <li>
+                        <a href="{{ url_for('chat', receiver_id=user.id) }}" 
+                           class="{{ 'active' if user.id == selected_user_id else '' }}">
+                            {{ user.username }}
+                        </a>
+                    </li>
+                {% endfor %}
+            </ul>
+        </div>
+        <div class="chat">
+            {% if selected_user_id %}
+                <h2>Chat</h2>
+                <div class="messages">
+                    {% for message in messages %}
+                        <div class="{{ 'sent' if message.sender_id == session['user_id'] else 'received' }}">
+                            <p>{{ message.content }}</p>
+                        </div>
+                    {% endfor %}
+                </div>
+                <form method="POST">
+                    <input type="hidden" name="receiver_id" value="{{ selected_user_id }}">
+                    <textarea name="content" placeholder="Type a message..."></textarea>
+                    <button type="submit">Send</button>
+                </form>
+            {% else %}
+                <p>Select a user to start chatting.</p>
+            {% endif %}
+        </div>
+    </div>
+</body>
+</html>
