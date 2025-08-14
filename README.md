@@ -16,6 +16,9 @@ The backend, built with Flask, handles user authentication and message routing, 
 
 ---
 
+<img width="1908" height="941" alt="image" src="https://github.com/user-attachments/assets/ea43b311-dabb-4320-b971-15da81e6cb2e" />
+---
+
 ## 🛠️ Technologies Used
 
 - **Backend**: Flask (Python)
@@ -66,6 +69,5 @@ Ensure you have Python 3.7+ installed. It's recommended to use a virtual environ
 
 
 
-<img width="1908" height="941" alt="image" src="https://github.com/user-attachments/assets/ea43b311-dabb-4320-b971-15da81e6cb2e" />
 <img width="1903" height="939" alt="image" src="https://github.com/user-attachments/assets/3a0f2ad0-a456-4d56-8ecf-f2589ae8187b" />
 <img width="1909" height="936" alt="image" src="https://github.com/user-attachments/assets/995eb793-fb90-4cde-a969-1b5a4ea24a63" />
